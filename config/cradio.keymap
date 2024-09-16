@@ -51,7 +51,7 @@
         };
 
         left_layer {
-            bindings = <xx
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  ESC     │  F1      │  F2      │  F3      │  F4      │   │          │          │  UP      │          │          │
             &kp ESC    &kp F1     &kp F2     &kp F3     &kp F4         &trans     &trans     &kp UARW   &trans     &trans
