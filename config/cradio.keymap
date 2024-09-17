@@ -53,11 +53,11 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESC     │  F1      │  F2      │  F3      │  F4      │   │          │          │  UP      │          │          │
-            &kp ESC    &kp F1     &kp F2     &kp F3     &kp F4         &trans     &trans     &kp UARW   &trans     &trans
+        //│  ESC     │  F1      │  F2      │  F3      │  F4      │   │          │  PG UP   │  UP      │  PG DOWN │          │
+            &kp ESC    &kp F1     &kp F2     &kp F3     &kp F4         &trans     &kp PG_UP  &kp UARW   &kp PG_DN  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CAPS    │  F5      │  F6      │  F7      │  F8      │   │          │  LEFT    │  DOWN    │  RIGHT   │          │
-            &kp CAPS   &kp F5     &kp F6     &kp F7     &kp F8         &trans     &kp LARW   &kp DARW   &kp RARW   &trans
+        //│  CAPS    │  F5      │  F6      │  F7      │  F8      │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     │
+            &kp CAPS   &kp F5     &kp F6     &kp F7     &kp F8         &kp HOME   &kp LARW   &kp DARW   &kp RARW   &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  F9      │  F10     │  F11     │  F12     │   │          │          │          │          │          │
             &trans     &kp F9     &kp F10    &kp F11    &kp F12        &trans     &trans      &trans     &trans    &trans
