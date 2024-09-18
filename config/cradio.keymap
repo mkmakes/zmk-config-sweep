@@ -83,11 +83,11 @@
         //│  CAPS    │  F5      │  F6      │  F7      │  F8      │   │          │  LEFT    │  DOWN    │  RIGHT   │          │
             &kp CAPS   &kp F5     &kp F6     &kp F7     &kp F8         &prev_tab  &kp LARW   &kp DARW   &kp RARW   &next_tab
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  F9      │  F10     │  VOLDN   │  VOLUP   │   │          │          │          │          │          │
-            &trans     &kp F9     &kp F10 &kp C_VOL_DN &kp C_VOL_UP    &kp TAB   &kp RSHIFT  &trans     &trans     &trans
+        //│  PLAY    │  PREV    │  NEXT    │  VOLDN   │  VOLUP   │   │          │          │          │          │          │
+            &kp C_PP  &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP   &kp RSHIFT  &kp TAB    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &kp RSHIFT   &trans
-        //                                 ╰──────────┴──────────╯   ╰────────────┴─────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴─────────╯
             >;
         };
 
