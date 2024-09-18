@@ -14,6 +14,28 @@
         };
     };
 
+    macros {
+        next_app: next_app {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp RGUI>;
+        };
+
+        prev_app: prev_app {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RGUI>
+                , <&macro_press &kp RSHIFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp RGUI>
+                , <&macro_release &kp RSHIFT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -33,7 +55,7 @@
             >;
         };
 
-        right_layer {
+        left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  +       │  1 !     │  2 @     │  3 #     │  *       │   │  ` ~     │          │  [ {     │  ] }     │  \ |     │
@@ -42,28 +64,28 @@
         //│  - _     │  4 $     │  5 %     │  6 ^     │  / ?     │   │  - _     │  = +     │  ; :     │  ' "     │          │
             &kp MINUS  &kp N4     &kp N5     &kp N6     &kp FSLH       &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  = +     │  7 &     │  8 *     │  9 (     │  0 )     │   │  (       │  )       │  , <     │  . >     │  / ?     │
-            &kp EQUAL  &kp N7     &kp N8     &kp N9     &kp N0         &kp LPAR   &kp RPAR   &kp COMMA  &kp DOT    &kp FSLH
+        //│  . >     │  7 &     │  8 *     │  9 (     │  0 )     │   │  (       │  )       │  , <     │  . >     │  / ?     │
+            &kp DOT    &kp N7     &kp N8     &kp N9     &kp N0         &kp LPAR   &kp RPAR   &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        left_layer {
+        right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESC     │  F1      │  F2      │  F3      │  F4      │   │          │  PG UP   │  UP      │  PG DOWN │          │
-            &kp ESC    &kp F1     &kp F2     &kp F3     &kp F4         &trans     &kp PG_UP  &kp UARW   &kp PG_DN  &trans
+        //│  ESC     │  F1      │  F2      │  F3      │  F4      │   │  PG UP   │  HOME    │  UP      │  END     │  PG DN   │
+            &kp ESC    &kp F1     &kp F2     &kp F3     &kp F4         &kp PG_UP  &kp HOME   &kp UARW   &kp PG_DN  &kp PG_DN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CAPS    │  F5      │  F6      │  F7      │  F8      │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     │
-            &kp CAPS   &kp F5     &kp F6     &kp F7     &kp F8         &kp HOME   &kp LARW   &kp DARW   &kp RARW   &kp END
+        //│  CAPS    │  F5      │  F6      │  F7      │  F8      │   │          │  LEFT    │  DOWN    │  RIGHT   │          │
+            &kp CAPS   &kp F5     &kp F6     &kp F7     &kp F8         &prev_app  &kp LARW   &kp DARW   &kp RARW   &next_app
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  F9      │  F10     │  F11     │  F12     │   │          │          │          │  VOLUP   │  VOLDN   │
-            &trans     &kp F9     &kp F10    &kp F11    &kp F12        &trans      &trans     &trans  &kp C_VOL_UP  &kp C_VOL_DN
+        //│          │  F9      │  F10     │  VOLDN   │  VOLUP   │   │          │          │          │          │          │
+            &trans     &kp F9     &kp F10 &kp C_VOL_DN &kp C_VOL_UP    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &kp RSHIFT   &trans
-        //                                 ╰──────────┴──────────╯   ╰───────────┴──────────╯
+        //                                 ╰──────────┴──────────╯   ╰────────────┴─────────╯
             >;
         };
 
