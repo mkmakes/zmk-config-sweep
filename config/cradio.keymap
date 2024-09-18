@@ -15,7 +15,7 @@
     };
 
     macros {
-        next_tab: next_tab {
+        prev_tab: prev_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -26,7 +26,7 @@
                 , <&macro_release &kp RSHIFT>;
         };
 
-        prev_tab: prev_tab {
+        next_tab: next_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
