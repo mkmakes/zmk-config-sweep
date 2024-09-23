@@ -35,6 +35,13 @@
             bindings = <&kp POUND>, <&kp KP_N3>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        four: four {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DLLR>, <&kp KP_N4>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -87,7 +94,7 @@
             &kp PLUS   &one       &two       &three     &kp STAR       &kp GRAVE  &none      &kp LBKT   &kp RBKT   &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  - _     │  4 $     │  5 %     │  6 ^     │  / ?     │   │  - _     │  = +     │  ; :     │  ' "     │          │
-            &kp MINUS  &kp N4     &kp N5     &kp N6     &kp FSLH       &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
+            &kp MINUS  &four      &kp N5     &kp N6     &kp FSLH       &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  . >     │  7 &     │  8 *     │  9 (     │  0 )     │   │  (       │  )       │  , <     │  . >     │  / ?     │
             &kp DOT    &kp N7     &kp N8     &kp N9     &kp N0         &kp LPAR   &kp RPAR   &kp COMMA  &kp DOT    &kp FSLH
