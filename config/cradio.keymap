@@ -21,6 +21,66 @@
             bindings = <&kp EXCL>, <&kp KP_N1>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        two: two {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&kp KP_N2>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        three: three {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp POUND>, <&kp KP_N3>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        four: four {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DLLR>, <&kp KP_N4>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        five: five {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PRCNT>, <&kp KP_5>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        six: six {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&kp KP_N6>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        seven: seven {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp KP_N7>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        eight: eight {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp STAR>, <&kp KP_N8>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nine: nine {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp KP_N9>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        zero: zero {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp KP_N0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        and: and {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -69,14 +129,14 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  +       │  1 !     │  2 @     │  3 #     │  *       │   │  ` ~     │          │  [ {     │  ] }     │  \ |     │
-            &kp PLUS   &one       &kp N2     &kp N3     &kp STAR       &kp GRAVE  &none      &kp LBKT   &kp RBKT   &kp BSLH
+        //│  +       │  ! 1     │  @ 2     │  # 3     │  *       │   │  ` ~     │  & !     │  [ {     │  ] }     │  \ |     │
+           &kp KP_PLUS &one       &two       &three &kp KP_ASTERISK    &kp GRAVE  &and       &kp LBKT   &kp RBKT   &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  - _     │  4 $     │  5 %     │  6 ^     │  / ?     │   │  - _     │  = +     │  ; :     │  ' "     │          │
-            &kp MINUS  &kp N4     &kp N5     &kp N6     &kp FSLH       &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
+        //│  -       │  $ 4     │  % 5     │  ^ 6     │  /       │   │  - _     │  = +     │  ; :     │  ' "     │          │
+      &kp KP_SUBTRACT  &four      &five      &six     &kp KP_SLASH     &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  . >     │  7 &     │  8 *     │  9 (     │  0 )     │   │  (       │  )       │  , <     │  . >     │  / ?     │
-            &kp DOT    &kp N7     &kp N8     &kp N9     &kp N0         &kp LPAR   &kp RPAR   &kp COMMA  &kp DOT    &kp FSLH
+        //│  .       │  & 7     │  * 8     │  ( 9     │  ) 0     │   │  (       │  )       │  , <     │  . >     │  / ?     │
+           &kp KP_DOT  &seven     &eight     &nine      &zero          &kp LPAR   &kp RPAR   &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
