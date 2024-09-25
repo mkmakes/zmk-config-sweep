@@ -81,22 +81,64 @@
             bindings = <&kp GRAVE>, <&kp AMPS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        mark: mark {
+        usym: usym {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp DLLR>;
+            bindings = <&kp DLLR>, <&kp PIPE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        at: at {
+        isym: isym {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp AT>;
+            bindings = <&kp LBRC>, <&kp LBKT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        and: and {
+        osym: osym {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RPAR>, <&kp AMPS>;
+            bindings = <&kp RBRC>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        psym: psym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UNDER>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        hsym: hsym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL>, <&kp MINUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ksym: ksym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        nsym: nsym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        msym: and {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        ctrlsym: ctrlsym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        altsym: altsym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp AT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -148,15 +190,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  +       │  ! 1     │  @ 2     │  # 3     │  *       │   │  ` &     │  ! $     │  [ {     │  ] }     │  \ |     │
-           &kp KP_PLUS &one       &two       &three &kp KP_ASTERISK    &ysym      &mark       &kp LBKT   &kp RBKT   &kp BSLH
+           &kp KP_PLUS &one       &two       &three &kp KP_ASTERISK    &ysym      &usym       &isym     &osym      &psym
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  -       │  $ 4     │  % 5     │  ^ 6     │  /       │   │  - _     │  = +     │  ; :     │  ' "     │          │
-      &kp KP_SUBTRACT  &four      &five      &six     &kp KP_SLASH     &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
+        //│  -       │  $ 4     │  % 5     │  ^ 6     │  /       │   │  ! -     │  = +     │  : ;     │  ' "     │          │
+      &kp KP_SUBTRACT  &four      &five      &six     &kp KP_SLASH     &hsym      &kp EQUAL  &ksym      &kp SQT    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  .       │  & 7     │  * 8     │  ( 9     │  ) 0     │   │  ( @     │  ) &     │  , <     │  . >     │  / ?     │
-           &kp KP_DOT  &seven     &eight     &nine      &zero          &at        &and       &kp COMMA  &kp DOT    &kp FSLH
+        //│  .       │  & 7     │  * 8     │  ( 9     │  ) 0     │   │  ( <     │  ) >     │  , <     │  . >     │  / ?     │
+           &kp KP_DOT  &seven     &eight     &nine      &zero          &nsym      &msym      &ctrlsym   &altsym    &mt RGUI FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &kp RGUI   &trans
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
