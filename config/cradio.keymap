@@ -75,6 +75,12 @@
             bindings = <&kp RPAR>, <&kp KP_N0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        ysym: ysym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp AMPS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         mark: mark {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -141,8 +147,8 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  +       │  ! 1     │  @ 2     │  # 3     │  *       │   │  ` ~     │  ! $     │  [ {     │  ] }     │  \ |     │
-           &kp KP_PLUS &one       &two       &three &kp KP_ASTERISK    &kp GRAVE  &mark       &kp LBKT   &kp RBKT   &kp BSLH
+        //│  +       │  ! 1     │  @ 2     │  # 3     │  *       │   │  ` &     │  ! $     │  [ {     │  ] }     │  \ |     │
+           &kp KP_PLUS &one       &two       &three &kp KP_ASTERISK    &ysym      &mark       &kp LBKT   &kp RBKT   &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  -       │  $ 4     │  % 5     │  ^ 6     │  /       │   │  - _     │  = +     │  ; :     │  ' "     │          │
       &kp KP_SUBTRACT  &four      &five      &six     &kp KP_SLASH     &kp MINUS  &kp EQUAL  &kp SEMI   &kp SQT    &trans
@@ -150,7 +156,7 @@
         //│  .       │  & 7     │  * 8     │  ( 9     │  ) 0     │   │  ( @     │  ) &     │  , <     │  . >     │  / ?     │
            &kp KP_DOT  &seven     &eight     &nine      &zero          &at        &and       &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         &kp RGUI   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
