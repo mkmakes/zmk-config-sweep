@@ -102,13 +102,19 @@
         psym: psym {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp UNDER>, <&kp BSLH>;
+            bindings = <&kp KP_EQUAL>, <&kp BSLH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         hsym: hsym {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp EXCL>, <&kp MINUS>;
+            bindings = <&kp LT>, <&kp MINUS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        jsym: jsym {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GT>, <&kp KP_PLUS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ksym: ksym {
@@ -120,13 +126,13 @@
         nsym: nsym {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp LT>;
+            bindings = <&kp LPAR>, <&kp UNDER>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         msym: and {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp RPAR>, <&kp GT>;
+            bindings = <&kp RPAR>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ctrlsym: ctrlsym {
@@ -189,13 +195,13 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  +       │  ! 1     │  @ 2     │  # 3     │  *       │   │  ` &     │  ! $     │  [ {     │  ] }     │  \ |     │
+        //│  +       │  ! 1     │  @ 2     │  # 3     │  *       │   │  ` &     │  $ |     │  { [     │  } ]     │  \ |     │
            &kp KP_PLUS &one       &two       &three &kp KP_ASTERISK    &ysym      &usym       &isym     &osym      &psym
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  -       │  $ 4     │  % 5     │  ^ 6     │  /       │   │  ! -     │  = +     │  : ;     │  ' "     │          │
-      &kp KP_SUBTRACT  &four      &five      &six     &kp KP_SLASH     &hsym      &kp EQUAL  &ksym      &kp SQT    &trans
+        //│  -       │  $ 4     │  % 5     │  ^ 6     │  /       │   │  < -     │  > +     │  : ;     │  ' "     │          │
+      &kp KP_SUBTRACT  &four      &five      &six     &kp KP_SLASH     &hsym      &jsym      &ksym      &kp SQT    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  .       │  & 7     │  * 8     │  ( 9     │  ) 0     │   │  ( <     │  ) >     │  , <     │  . >     │  / ?     │
+        //│  .       │  & 7     │  * 8     │  ( 9     │  ) 0     │   │  ( _     │  ) !     │  , <     │  . >     │  / ?     │
            &kp KP_DOT  &seven     &eight     &nine      &zero          &nsym      &msym      &ctrlsym   &altsym    &mt RGUI FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
